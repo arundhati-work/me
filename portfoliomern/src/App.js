@@ -7,6 +7,7 @@ import WorkExperience from './Components/WorkExperience/WorkExperience';
 import Skills from './Components/Skills/Skills';
 import ProjectGrid from './Components/ProjectGrid/ProjectGrid';
 import ProjectDetail from './Components/ProjectDetail/ProjectDetail';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -25,7 +26,9 @@ function App() {
             } />
             <Route path="/projects/:id" element={<ProjectDetail />} />
           </Routes>
+          
         </main>
+        <Footer />
       </div>
     </Router>
   );
