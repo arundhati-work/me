@@ -1,0 +1,123 @@
+.heading-container {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .heading-container h2 {
+    font-family: "Gloock", "Times New Roman";
+    color: #85105E;
+    margin: 0;  /* To remove any default margins */
+  }
+
+/* Work Experience Section */
+#work-exp-section .inner-container {
+    width: 95%;
+  }
+  
+  /* Table Styles */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .experience-block {
+    margin-bottom: 2.5rem;
+  }
+  
+  .experience-block:first-of-type {
+    border-top: none;
+  }
+  
+  td.dates {
+    width: 20%;
+    font-size: x-small;
+    color: #4D4A4A;
+    padding-top: 5px;
+  }
+  
+  td.company {
+    color: #222222;
+    font-weight: 500;
+  }
+  
+  td.role {
+    font-size: 90%;
+    color: #85105E;
+    font-weight: 500;
+  }
+  
+  td.job {
+    font-size: small;
+    color: #555252;
+  }
+  
+  td.job menu {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+  }
+  
+  .mobile-dates {
+    display: none;
+  }
+  
+  .mobile-row {
+    display: none;
+  }
+  
+  /* Desktop only rows */
+  @media screen and (min-width: 601px) {
+    .mobile-dates, .mobile-row {
+      display: none;
+    }
+    
+    .desktop-dates {
+      display: table-row;
+    }
+  }
+  
+  /* Mobile Responsiveness */
+  @media screen and (max-width: 600px) {
+    .outer-container {
+      width: 100%;
+      margin: 0;
+      margin-bottom: 2rem;
+    }
+  
+    .inner-container {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    .mobile-dates {
+      display: table-row;
+    }
+  
+    .mobile-row {
+      display: table-row;
+    }
+  
+    .desktop-dates {
+      display: none;
+    }
+  
+    td.dates {
+      width: 100%;
+      padding-bottom: 8px;
+    }
+  
+    td.job {
+      font-size: smaller;
+    }
+  
+    /* Add more spacing between blocks on mobile */
+    .experience-block {
+      margin-bottom: 3rem;
+    }
+    
+    td.job menu {
+      padding-left: 15px;
+    }
+  }
