@@ -1,0 +1,175 @@
+/* ProjectDetail.css */
+.project-detail {
+    min-height: 100vh;
+    background-color: #EDEDED;
+  }
+  
+  .hero-section {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    color: white;
+  }
+  
+  .hero-overlay h1 {
+    font-family: 'Gloock', 'Times New Roman';
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .created-date {
+    font-family: 'Poppins', sans-serif;
+    opacity: 0.8;
+  }
+  
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .detail-section {
+    margin: 3rem 0;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .detail-section h2 {
+    font-family: 'Gloock', 'Times New Roman';
+    color: #85105E;
+    margin-bottom: 1.5rem;
+  }
+  
+  .challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .challenge-card {
+    background: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .tech-stack-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tech-tag {
+    background-color: rgba(133, 16, 94, 0.1);
+    color: #85105E;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+  }
+  
+  .enhancements-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .enhancements-list li::before {
+    content: "•";
+    color: #85105E;
+    position: absolute;
+    left: 0;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-grid img:hover {
+    transform: scale(1.02);
+  }
+  
+  .links-section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .project-link {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-link:hover {
+    transform: translateY(-2px);
+  }
+  
+  .demo-link {
+    background-color: #85105E;
+    color: white;
+  }
+  
+  .github-link {
+    background-color: #333;
+    color: white;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .hero-overlay h1 {
+      font-size: 2rem;
+    }
+  
+    .content-container {
+      padding: 1rem;
+    }
+  
+    .detail-section {
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+  
+    .links-section {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+    }
+  
+    .project-link {
+      text-align: center;
+    }
+  }
