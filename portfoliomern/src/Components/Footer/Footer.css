@@ -171,4 +171,9 @@
     .waves {
       height: 60px;
     }
+
+    .footer-bottom{
+        align-items: end;
+        text-align: right;
+    }
   }
