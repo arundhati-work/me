@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home-section');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -21,7 +24,10 @@ const Navbar = () => {
           }
         });
       },
-      { threshold: 0.5 }
+      { 
+        threshold: 0.2,
+        rootMargin: '-50px 0px -50px 0px'
+      }
     );
 
     // Observe all sections
@@ -34,20 +40,28 @@ const Navbar = () => {
       document.removeEventListener('click', handleClickOutside);
       observer.disconnect();
     };
-  }, []);
+  }, [location.pathname]);
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
-    const targetElement = document.getElementById(targetId);
     
-    if (targetElement) {
-      setIsOpen(false);
-      setActiveSection(targetId);
-      
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+    if (location.pathname !== '/') {
+      // Store the target section in sessionStorage
+      sessionStorage.setItem('scrollTarget', targetId);
+      // Navigate to home page
+      navigate('/');
+    } else {
+      // Already on home page, just scroll
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        setIsOpen(false);
+        setActiveSection(targetId);
+        
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     }
   };
 
@@ -120,18 +134,6 @@ const Navbar = () => {
               <p>Recent Works</p>
             </div>
           </a>
-          {/* <a 
-            href="#contact" 
-            onClick={(e) => handleNavClick(e, 'contact-section')}
-            className={activeSection === 'contact-section' ? 'active' : ''}
-          >
-            <div className="nav-item">
-              <div className="nav-icon">
-                <img src="/icons/contact.png" alt="Contact Me" />
-              </div>
-              <p>Contact Me</p>
-            </div>
-          </a> */}
           <a href="resume.pdf" download>
             <div className="nav-item">
               <div className="nav-icon">

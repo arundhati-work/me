@@ -1,5 +1,5 @@
-// App.js
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
@@ -10,11 +10,37 @@ import ProjectDetail from './Components/ProjectDetail/ProjectDetail';
 import Certifications from './Components/Certifications/Certifications';
 import Footer from './Components/Footer/Footer';
 
+// Create a wrapper component to handle scroll effects
+const ScrollManager = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      const scrollTarget = sessionStorage.getItem('scrollTarget');
+      if (scrollTarget) {
+        sessionStorage.removeItem('scrollTarget');
+        setTimeout(() => {
+          const targetElement = document.getElementById(scrollTarget);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
+      }
+    }
+  }, [location]);
+
+  return null;
+};
+
 function App() {
   return (
     <Router>
       <div className="App">
         <Navbar />
+        <ScrollManager />
         <main>
           <Routes>
             <Route path="/" element={
@@ -28,7 +54,6 @@ function App() {
             } />
             <Route path="/projects/:id" element={<ProjectDetail />} />
           </Routes>
-
         </main>
         <Footer />
       </div>

@@ -72,8 +72,8 @@ nav a:not([download]):not([href^="mailto:"]):not([href^="tel:"]):hover {
 
 /* Active state */
 nav a.active {
-  background-color: #c27baa;
-  color: white;
+  background-color: #d4aac6;
+  color: #85105E;
 }
 
 nav a.active .nav-item {
@@ -81,7 +81,7 @@ nav a.active .nav-item {
 }
 
 nav a.active .nav-item p {
-  color: white;
+  color: #85105E;
 }
 
 /* Navigation Sections */
