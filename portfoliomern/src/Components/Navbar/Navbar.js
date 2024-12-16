@@ -4,7 +4,6 @@ import './Navbar.css';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Handle clicks outside navbar to close it
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!event.target.closest('#nav-menu') && !event.target.closest('#hamburger')) {
@@ -16,6 +15,22 @@ const Navbar = () => {
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      // Close mobile menu if open
+      setIsOpen(false);
+      
+      // Smooth scroll to target
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <header>
       <div id="hamburger" className="hamburger" onClick={() => setIsOpen(!isOpen)}>
@@ -25,7 +40,7 @@ const Navbar = () => {
       </div>
       <nav id="nav-menu" className={isOpen ? 'active' : ''}>
         <div className="nav-top">
-          <a href="#home-section">
+          <a href="#home" onClick={(e) => handleNavClick(e, 'home-section')}>
             <div className="nav-item">
               <div className="nav-icon">
                 <img src="/icons/home.png" alt="Home" />
@@ -33,7 +48,7 @@ const Navbar = () => {
               <p>Home</p>
             </div>
           </a>
-          <a href="#work-exp-section">
+          <a href="#work-exp" onClick={(e) => handleNavClick(e, 'work-exp-section')}>
             <div className="nav-item">
               <div className="nav-icon">
                 <img src="/icons/work.png" alt="Work Experience" />
@@ -41,7 +56,7 @@ const Navbar = () => {
               <p>Work Experience</p>
             </div>
           </a>
-          <a href="#skills-section">
+          <a href="#skills" onClick={(e) => handleNavClick(e, 'skills-section')}>
             <div className="nav-item">
               <div className="nav-icon">
                 <img src="/icons/skills.png" alt="Skills" />
@@ -49,15 +64,7 @@ const Navbar = () => {
               <p>Skills</p>
             </div>
           </a>
-          <a href="#recent-works-section">
-            <div className="nav-item">
-              <div className="nav-icon">
-                <img src="/icons/projects.png" alt="Recent Works" />
-              </div>
-              <p>Recent Works</p>
-            </div>
-          </a>
-          <a href="#certifications-section">
+          <a href="#certifications" onClick={(e) => handleNavClick(e, 'certifications-section')}>
             <div className="nav-item">
               <div className="nav-icon">
                 <img src="/icons/certs.png" alt="Certifications" />
@@ -65,7 +72,15 @@ const Navbar = () => {
               <p>Certifications</p>
             </div>
           </a>
-          <a href="#contact-section">
+          <a href="#recent-works" onClick={(e) => handleNavClick(e, 'recent-works-section')}>
+            <div className="nav-item">
+              <div className="nav-icon">
+                <img src="/icons/projects.png" alt="Recent Works" />
+              </div>
+              <p>Recent Works</p>
+            </div>
+          </a>
+          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact-section')}>
             <div className="nav-item">
               <div className="nav-icon">
                 <img src="/icons/contact.png" alt="Contact Me" />

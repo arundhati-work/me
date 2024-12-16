@@ -22,12 +22,13 @@ function App() {
                 <Home />
                 <WorkExperience />
                 <Skills />
-                <ProjectGrid />
                 <Certifications/>
+                <ProjectGrid />
               </>
             } />
             <Route path="/projects/:id" element={<ProjectDetail />} />
           </Routes>
+
         </main>
         <Footer />
       </div>

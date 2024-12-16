@@ -39,10 +39,10 @@
   
   #blogButton {
     cursor: pointer;
-    background-color: #C35A8D;
-    padding: 0.7rem 3rem;
+    background-color: #9c0e6d;
+    padding: 0.8rem 1.3rem;
     border: none;
-    font-size: large;
+    font-size: 1rem;
     color: #FEFCFF;
     border-radius: 5px;
   }
