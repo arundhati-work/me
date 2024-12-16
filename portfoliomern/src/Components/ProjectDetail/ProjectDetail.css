@@ -127,7 +127,7 @@
     gap: 2rem;
   }
   
-  .project-link {
+  .project-detail .project-link {
     padding: 1rem 2rem;
     border-radius: 8px;
     text-decoration: none;
