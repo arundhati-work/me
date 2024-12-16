@@ -37,7 +37,7 @@ const ScrollManager = () => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <div className="App">
         <Navbar />
         <ScrollManager />
