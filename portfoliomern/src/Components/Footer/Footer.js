@@ -6,7 +6,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="main-footer">
+    <footer className="main-footer"  id="contact-section">
       <div className="waves">
         <div className="wave" id="wave1"></div>
         <div className="wave" id="wave2"></div>
@@ -27,14 +27,14 @@ const Footer = () => {
                 <Github size={24} />
                 <span>GitHub</span>
               </a>
-              <a href="https://linkedin.com/in/yourprofile" 
+              <a href="https://www.linkedin.com/in/arundhati-bandopadhyaya-519162191/" 
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="social-icon">
                 <Linkedin size={24} />
                 <span>LinkedIn</span>
               </a>
-              <a href="https://codepen.io/yourprofile" 
+              <a href="https://codepen.io/overReacting" 
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="social-icon">

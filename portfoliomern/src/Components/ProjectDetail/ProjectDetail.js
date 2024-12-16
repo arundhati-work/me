@@ -1,32 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { fetchProjectById } from '../../services/api';
+// src/components/ProjectDetail/ProjectDetail.jsx
+import React, {useEffect} from 'react';
+import { useParams, Navigate } from 'react-router-dom';
+import { getProjectById } from '../../data/projects';
 import './ProjectDetail.css';
 
 const ProjectDetail = () => {
   const { id } = useParams();
-  const [project, setProject] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const project = getProjectById(id);
 
   useEffect(() => {
-    const loadProject = async () => {
-      try {
-        const response = await fetchProjectById(id);
-        setProject(response.data);
-        setLoading(false);
-      } catch (err) {
-        setError('Failed to load project details');
-        setLoading(false);
-      }
-    };
-
-    loadProject();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }, [id]);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
-  if (!project) return <div>Project not found</div>;
+  if (!project) {
+    return <Navigate to="/projects" replace />;
+  }
 
   return (
     <div className="project-detail">
@@ -35,7 +26,7 @@ const ProjectDetail = () => {
         <img src={project.coverImage} alt={project.title} className="hero-image" />
         <div className="hero-overlay">
           <h1>{project.title}</h1>
-          <p className="created-date">Created: {new Date(project.createdDate).toLocaleDateString()}</p>
+          <p className="created-date">Created: {project.createdDate}</p>
         </div>
       </section>
 
@@ -79,7 +70,7 @@ const ProjectDetail = () => {
         {/* Future Enhancements Section */}
         <section className="detail-section">
           <h2>Future Enhancements</h2>
-          <ul className="enhancements-list">
+          <ul className="enhancements-list" style={{listStyle: "none"}}>
             {project.futureEnhancements.map((enhancement, index) => (
               <li key={index}>{enhancement}</li>
             ))}

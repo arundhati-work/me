@@ -1,30 +1,11 @@
-import React, { useState, useEffect } from 'react';
+// src/components/ProjectGrid/ProjectGrid.jsx
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { fetchProjects } from '../../services/api';
+import { getAllProjects } from '../../data/projects';
 import './ProjectGrid.css';
 
 const ProjectGrid = () => {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const loadProjects = async () => {
-      try {
-        const response = await fetchProjects();
-        setProjects(response.data);
-        setLoading(false);
-      } catch (err) {
-        setError('Failed to load projects');
-        setLoading(false);
-      }
-    };
-
-    loadProjects();
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+  const projects = getAllProjects();
 
   return (
     <section id="recent-works-section">
@@ -35,7 +16,7 @@ const ProjectGrid = () => {
           </div>
           <div className="projects-container">
             {projects.map(project => (
-              <Link to={`/projects/${project._id}`} key={project._id}>
+              <Link to={`/projects/${project.id}`} key={project.id}>
                 <div 
                   className="project" 
                   style={{ 

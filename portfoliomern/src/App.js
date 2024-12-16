@@ -7,6 +7,7 @@ import WorkExperience from './Components/WorkExperience/WorkExperience';
 import Skills from './Components/Skills/Skills';
 import ProjectGrid from './Components/ProjectGrid/ProjectGrid';
 import ProjectDetail from './Components/ProjectDetail/ProjectDetail';
+import Certifications from './Components/Certifications/Certifications';
 import Footer from './Components/Footer/Footer';
 
 function App() {
@@ -22,11 +23,11 @@ function App() {
                 <WorkExperience />
                 <Skills />
                 <ProjectGrid />
+                <Certifications/>
               </>
             } />
             <Route path="/projects/:id" element={<ProjectDetail />} />
           </Routes>
-          
         </main>
         <Footer />
       </div>
