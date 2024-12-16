@@ -1,26 +1,43 @@
 /* Certifications.css */
-.certifications-container {
+#certifications-section {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
+}
+
+.outer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.inner-container {
+    width: 95%;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content */
 }
 
-.cert-header {
-    margin-bottom: 3rem;
-    text-align: left;
+.heading-container {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: flex-start;
 }
 
-.cert-title {
-    font-family: 'Gloock', serif;
+.heading-container h2 {
+    font-family: "Gloock", "Times New Roman";
     color: #85105E;
-    margin-bottom: 1rem;
+    margin: 0;
 }
 
 .cert-gallery {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+    align-items: center; /* Center the gallery content */
 }
 
 .main-cert-display {
@@ -183,7 +200,7 @@
 }
 
 @media (max-width: 640px) {
-    .certifications-container {
+    .inner-container {
         padding: 1rem;
     }
 

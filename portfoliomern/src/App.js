@@ -47,9 +47,9 @@ function App() {
               <>
                 <Home />
                 <WorkExperience />
+                <ProjectGrid />
                 <Skills />
                 <Certifications/>
-                <ProjectGrid />
               </>
             } />
             <Route path="/projects/:id" element={<ProjectDetail />} />

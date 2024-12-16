@@ -99,6 +99,18 @@ const Navbar = () => {
             </div>
           </a>
           <a 
+            href="#recent-works" 
+            onClick={(e) => handleNavClick(e, 'recent-works-section')}
+            className={activeSection === 'recent-works-section' ? 'active' : ''}
+          >
+            <div className="nav-item">
+              <div className="nav-icon">
+                <img src="/icons/projects.png" alt="Recent Works" />
+              </div>
+              <p>Recent Works</p>
+            </div>
+          </a>
+          <a 
             href="#skills" 
             onClick={(e) => handleNavClick(e, 'skills-section')}
             className={activeSection === 'skills-section' ? 'active' : ''}
@@ -122,18 +134,7 @@ const Navbar = () => {
               <p>Certifications</p>
             </div>
           </a>
-          <a 
-            href="#recent-works" 
-            onClick={(e) => handleNavClick(e, 'recent-works-section')}
-            className={activeSection === 'recent-works-section' ? 'active' : ''}
-          >
-            <div className="nav-item">
-              <div className="nav-icon">
-                <img src="/icons/projects.png" alt="Recent Works" />
-              </div>
-              <p>Recent Works</p>
-            </div>
-          </a>
+          
           <a href="resume.pdf" download>
             <div className="nav-item">
               <div className="nav-icon">

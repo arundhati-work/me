@@ -96,76 +96,78 @@ const Certifications = () => {
 
   return (
     <section id="certifications-section">
-    <div className="certifications-container">
-      <div className="cert-header">
-        <h2 className="cert-title text-3xl">Certifications</h2>
-      </div>
+      <div className="outer-container">
+        <div className="inner-container">
+          <div className="heading-container">
+            <h2>Certifications</h2>
+          </div>
 
-      <div className="cert-gallery">
-        <div className="main-cert-display">
-          <div className="cert-image-container">
-            <img 
-              src={certifications[selectedCert].image} 
-              alt={certifications[selectedCert].title}
-              className="cert-image"
-            />
-            <div className="nav-buttons">
-              <button 
-                onClick={prevCert}
-                className="nav-button"
-                disabled={isAnimating}
-                aria-label="Previous certificate"
-              >
-                <ChevronLeft className="w-6 h-6 text-gray-800" />
-              </button>
-              <button 
-                onClick={nextCert}
-                className="nav-button"
-                disabled={isAnimating}
-                aria-label="Next certificate"
-              >
-                <ChevronRight className="w-6 h-6 text-gray-800" />
-              </button>
+          <div className="cert-gallery">
+            <div className="main-cert-display">
+              <div className="cert-image-container">
+                <img 
+                  src={certifications[selectedCert].image} 
+                  alt={certifications[selectedCert].title}
+                  className="cert-image"
+                />
+                <div className="nav-buttons">
+                  <button 
+                    onClick={prevCert}
+                    className="nav-button"
+                    disabled={isAnimating}
+                    aria-label="Previous certificate"
+                  >
+                    <ChevronLeft className="w-6 h-6 text-gray-800" />
+                  </button>
+                  <button 
+                    onClick={nextCert}
+                    className="nav-button"
+                    disabled={isAnimating}
+                    aria-label="Next certificate"
+                  >
+                    <ChevronRight className="w-6 h-6 text-gray-800" />
+                  </button>
+                </div>
+              </div>
+              <div className="cert-details">
+                <h3 className="cert-name text-xl">{certifications[selectedCert].title}</h3>
+                <p className="cert-meta">
+                  {certifications[selectedCert].issuer} • {certifications[selectedCert].date}
+                </p>
+                <p className="text-sm text-gray-500 mt-1">
+                  Credential ID: {certifications[selectedCert].credential}
+                </p>
+              </div>
+            </div>
+
+            <div className="thumbnails-container">
+              <div className="thumbnails-grid">
+                {certifications.map((cert, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleThumbnailClick(index)}
+                    className={`thumbnail-button ${selectedCert === index ? 'selected-thumbnail' : ''}`}
+                    aria-label={`Select ${cert.title}`}
+                  >
+                    <div className="thumbnail-image">
+                      <img 
+                        src={cert.image} 
+                        alt={cert.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="thumbnail-overlay">
+                      <p className="thumbnail-text">
+                        {cert.title}
+                      </p>
+                    </div>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="cert-details">
-            <h3 className="cert-name text-xl">{certifications[selectedCert].title}</h3>
-            <p className="cert-meta">
-              {certifications[selectedCert].issuer} • {certifications[selectedCert].date}
-            </p>
-            <p className="text-sm text-gray-500 mt-1">
-              Credential ID: {certifications[selectedCert].credential}
-            </p>
-          </div>
-        </div>
-
-        <div className="thumbnails-container">
-          <div className="thumbnails-grid">
-            {certifications.map((cert, index) => (
-              <button
-                key={index}
-                onClick={() => handleThumbnailClick(index)}
-                className={`thumbnail-button ${selectedCert === index ? 'selected-thumbnail' : ''}`}
-                aria-label={`Select ${cert.title}`}
-              >
-                <div className="thumbnail-image">
-                  <img 
-                    src={cert.image} 
-                    alt={cert.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="thumbnail-overlay">
-                  <p className="thumbnail-text">
-                    {cert.title}
-                  </p>
-                </div>
-              </button>
-            ))}
-          </div>
         </div>
       </div>
-    </div>
     </section>
   );
 };
