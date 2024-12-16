@@ -9,7 +9,7 @@ const ProjectGrid = () => {
 
   return (
     <section id="recent-works-section">
-      <div className="outer-container">
+      <div className="outer-container" style={{marginTop: "2rem"}}>
         <div className="inner-container">
           <div className="heading-container">
             <h2>Recent Works</h2>

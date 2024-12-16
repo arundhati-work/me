@@ -1,91 +1,96 @@
+/* Update Home.css */
 .outer-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .inner-container {
-    width: 80%;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
-  
-  /* Home section specific styles */
-  #home-section h1 {
-    color: #85105E;
-    font-family: 'Gloock', 'Times New Roman';
-    font-size: xxx-large;
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  #home-section h2 {
-    color: #222222;
-    font-family: "Poppins", "sans-serif";
-    margin-bottom: 2rem;
-  }
-  
-  #home-section h4 {
-    margin-top: 2rem;
-  }
-  
-  .button-container {
-    padding: 2rem 0;
-    width: 100%;
-  }
-  
-  #blogButton {
-    cursor: pointer;
-    background-color: #9c0e6d;
-    padding: 0.8rem 1.3rem;
-    border: none;
-    font-size: 1rem;
-    color: #FEFCFF;
-    border-radius: 5px;
-  }
-  
-  /* Mobile responsiveness */
-  @media screen and (max-width: 600px) {
-    .outer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-container {
+  width: 95%; /* Changed from 80% to 95% to match Work Experience */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Changed from center to flex-start to match Work Experience alignment */
+  justify-content: space-around;
+}
+
+/* Home section specific styles */
+.home-text {
+  width: 100%;
+}
+
+#home-section h1 {
+  color: #85105E;
+  font-family: 'Gloock', 'Times New Roman';
+  font-size: xxx-large;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#home-section h2 {
+  color: #222222;
+  font-family: "Poppins", "sans-serif";
+  margin-bottom: 2rem;
+}
+
+#home-section h4 {
+  margin-top: 2rem;
+}
+
+.button-container {
+  padding: 2rem 0;
+  width: 100%;
+}
+
+#blogButton {
+  cursor: pointer;
+  background-color: #9c0e6d;
+  padding: 0.8rem 1.3rem;
+  border: none;
+  font-size: 1rem;
+  color: #FEFCFF;
+  border-radius: 5px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+  .outer-container {
       width: 100%;
       margin: 0;
       margin-bottom: 2rem;
-      padding: 0 1.5rem; /* Added padding on sides */
-    }
-  
-    .inner-container {
-      width: 100%;
-      margin-bottom: 2rem; /* Added vertical margin */
-      padding: 1rem; /* Added padding all around */
-    }
-  
-    #home-section {
-      margin-top: 2rem; /* Added top margin to the section */
-    }
-  
-    #home-section h1 {
-      font-size: xx-large;
-    }
-    
-    #home-section h2 {
-      font-size: large;
-    }
+      padding: 0 1rem; /* Reduced side padding to match Work Experience */
+  }
 
-    #home-section h4 {
-        margin-top: 0;
-    }
-    
-    #home-section p {
+  .inner-container {
+      width: 100%;
+      margin-bottom: 2rem;
+      padding: 1rem;
+  }
+
+  #home-section {
+      margin-top: 2rem;
+  }
+
+  #home-section h1 {
+      font-size: xx-large;
+  }
+  
+  #home-section h2 {
+      font-size: large;
+  }
+
+  #home-section h4 {
+      margin-top: 0;
+  }
+  
+  #home-section p {
       font-size: smaller;
-      margin: 0 0.5rem; /* Added margin to paragraph */
-    }
-    
-    #blogButton {
+      margin: 0;  /* Removed side margins */
+  }
+  
+  #blogButton {
       background-color: rgba(133, 16, 94, 0.8);
       padding: 0.7rem 3rem;
       font-size: smaller;
-    }
   }
+}
