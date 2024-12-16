@@ -95,7 +95,8 @@ const Certifications = () => {
   };
 
   return (
-    <div className="certifications-container" id="certifications-section">
+    <section id="certifications-section">
+    <div className="certifications-container">
       <div className="cert-header">
         <h2 className="cert-title text-3xl">Certifications</h2>
       </div>
@@ -165,6 +166,7 @@ const Certifications = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

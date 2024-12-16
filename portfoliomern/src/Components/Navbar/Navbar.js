@@ -3,6 +3,7 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home-section');
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -11,8 +12,28 @@ const Navbar = () => {
       }
     };
 
+    // Create intersection observer to track active section
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    // Observe all sections
+    document.querySelectorAll('section[id]').forEach((section) => {
+      observer.observe(section);
+    });
+
     document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      observer.disconnect();
+    };
   }, []);
 
   const handleNavClick = (e, targetId) => {
@@ -20,10 +41,9 @@ const Navbar = () => {
     const targetElement = document.getElementById(targetId);
     
     if (targetElement) {
-      // Close mobile menu if open
       setIsOpen(false);
+      setActiveSection(targetId);
       
-      // Smooth scroll to target
       targetElement.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
@@ -40,7 +60,11 @@ const Navbar = () => {
       </div>
       <nav id="nav-menu" className={isOpen ? 'active' : ''}>
         <div className="nav-top">
-          <a href="#home" onClick={(e) => handleNavClick(e, 'home-section')}>
+          <a 
+            href="#home" 
+            onClick={(e) => handleNavClick(e, 'home-section')}
+            className={activeSection === 'home-section' ? 'active' : ''}
+          >
             <div className="nav-item">
               <div className="nav-icon">
                 <img src="/icons/home.png" alt="Home" />
@@ -48,7 +72,11 @@ const Navbar = () => {
               <p>Home</p>
             </div>
           </a>
-          <a href="#work-exp" onClick={(e) => handleNavClick(e, 'work-exp-section')}>
+          <a 
+            href="#work-exp" 
+            onClick={(e) => handleNavClick(e, 'work-exp-section')}
+            className={activeSection === 'work-exp-section' ? 'active' : ''}
+          >
             <div className="nav-item">
               <div className="nav-icon">
                 <img src="/icons/work.png" alt="Work Experience" />
@@ -56,7 +84,11 @@ const Navbar = () => {
               <p>Work Experience</p>
             </div>
           </a>
-          <a href="#skills" onClick={(e) => handleNavClick(e, 'skills-section')}>
+          <a 
+            href="#skills" 
+            onClick={(e) => handleNavClick(e, 'skills-section')}
+            className={activeSection === 'skills-section' ? 'active' : ''}
+          >
             <div className="nav-item">
               <div className="nav-icon">
                 <img src="/icons/skills.png" alt="Skills" />
@@ -64,7 +96,11 @@ const Navbar = () => {
               <p>Skills</p>
             </div>
           </a>
-          <a href="#certifications" onClick={(e) => handleNavClick(e, 'certifications-section')}>
+          <a 
+            href="#certifications-section" 
+            onClick={(e) => handleNavClick(e, 'certifications-section')}
+            className={activeSection === 'certifications-section' ? 'active' : ''}
+          >
             <div className="nav-item">
               <div className="nav-icon">
                 <img src="/icons/certs.png" alt="Certifications" />
@@ -72,7 +108,11 @@ const Navbar = () => {
               <p>Certifications</p>
             </div>
           </a>
-          <a href="#recent-works" onClick={(e) => handleNavClick(e, 'recent-works-section')}>
+          <a 
+            href="#recent-works" 
+            onClick={(e) => handleNavClick(e, 'recent-works-section')}
+            className={activeSection === 'recent-works-section' ? 'active' : ''}
+          >
             <div className="nav-item">
               <div className="nav-icon">
                 <img src="/icons/projects.png" alt="Recent Works" />
@@ -80,14 +120,18 @@ const Navbar = () => {
               <p>Recent Works</p>
             </div>
           </a>
-          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact-section')}>
+          {/* <a 
+            href="#contact" 
+            onClick={(e) => handleNavClick(e, 'contact-section')}
+            className={activeSection === 'contact-section' ? 'active' : ''}
+          >
             <div className="nav-item">
               <div className="nav-icon">
                 <img src="/icons/contact.png" alt="Contact Me" />
               </div>
               <p>Contact Me</p>
             </div>
-          </a>
+          </a> */}
           <a href="resume.pdf" download>
             <div className="nav-item">
               <div className="nav-icon">
