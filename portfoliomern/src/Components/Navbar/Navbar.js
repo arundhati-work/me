@@ -12,6 +12,8 @@ import download from "../../assets/icons/download.png";
 import email from "../../assets/icons/email.png";
 import call from "../../assets/icons/call.png";
 
+import resume from "../../assets/arundhati_bandopadhyaya_resume.pdf";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home-section');
@@ -145,7 +147,7 @@ const Navbar = () => {
             </div>
           </a>
           
-          <a href="resume.pdf" download>
+          <a href={resume} download>
             <div className="nav-item">
               <div className="nav-icon">
                 <img src={download} alt="Download Resume" />

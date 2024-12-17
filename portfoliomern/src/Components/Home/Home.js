@@ -1,11 +1,12 @@
 import React from 'react';
 import './Home.css';
+import resume from "../../assets/arundhati_bandopadhyaya_resume.pdf";
 
 const Home = () => {
     const handleResumeDownload = () => {
         // You'll need to place your resume.pdf in the public folder
-        const resumeUrl = '/resume.pdf';
-        window.open(resumeUrl, '_blank');
+        //const resumeUrl = '../';
+        window.open(resume, '_blank');
       };
 
   return (
