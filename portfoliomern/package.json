@@ -1,7 +1,7 @@
 {
   "name": "portfoliomern",
   "version": "0.1.0",
-  "homepage": "https://arundhati-work.github.io/portfolio/",
+  "homepage": "https://arundhati-work.github.io/me",
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
@@ -38,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
   }
 }

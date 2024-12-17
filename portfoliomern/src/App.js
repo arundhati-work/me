@@ -37,7 +37,7 @@ const ScrollManager = () => {
 
 function App() {
   return (
-    <Router basename="/portfolio">
+    <Router  basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Navbar />
         <ScrollManager />
