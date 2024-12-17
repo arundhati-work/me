@@ -65,7 +65,7 @@ nav a {
 }
 
 /* Hover effect (excluding download, email, and phone links) */
-nav a:not([download]):not([href^="mailto:"]):not([href^="tel:"]):hover {
+nav a:hover {
   background-color: rgba(156, 14, 109, 0.1);
   transform: translateX(5px);
 }

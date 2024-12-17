@@ -2,6 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './Certifications.css';
 
+// Import all certification images
+import fullStack from "../../assets/certifications/fullStack.png";
+import frontend from "../../assets/certifications/frontend.png";
+import backend from "../../assets/certifications/backend.png";
+import azure from "../../assets/certifications/azure.png";
+import jd1 from "../../assets/certifications/jd1.png";
+import pd1 from "../../assets/certifications/pd1.png";
+import admin from "../../assets/certifications/admin.png";
+import associate from "../../assets/certifications/associate.png";
+
 const Certifications = () => {
   const [selectedCert, setSelectedCert] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -9,56 +19,56 @@ const Certifications = () => {
   const certifications = [
     {
       title: "Meta Full Stack Engineer",
-      image: "/certifications/fullStack.png",
+      image: fullStack,
       issuer: "Meta",
       date: "Aug 08, 2024",
       credential: "SU9qWMpo"
     },
     {
       title: "Meta Frontend Developer",
-      image: "/certifications/frontend.png",
+      image: frontend,
       issuer: "Meta",
       date: "Oct 27, 2023",
       credential: "ZU7QPSRQT2B6"
     },
     {
       title: "Meta Backend Developer",
-      image: "/certifications/backend.png",
+      image: backend,
       issuer: "Meta",
       date: "July 19, 2024",
       credential: "X66JTVCLZY8Q"
     },
     {
       title: "Microsoft Azure Fundamentals",
-      image: "/certifications/azure.png",
+      image: azure,
       issuer: "Microsoft",
       date: "June 11, 2022",
       credential: "I305-8238"
     },
     {
       title: "Salesforce JS Developer 1",
-      image: "/certifications/jd1.png",
+      image: jd1,
       issuer: "Salesforce",
       date: "July 25, 2023",
       credential: "3555773"
     },
     {
       title: "Salesforce Platform Developer 1",
-      image: "/certifications/pd1.png",
+      image: pd1,
       issuer: "Salesforce",
       date: "June 2025, 2023",
       credential: "3494189"
     },
     {
       title: "Salesforce Administrator",
-      image: "/certifications/admin.png",
+      image: admin,
       issuer: "Salesforce",
       date: "November 06, 2022",
       credential: "2688777"
     },
     {
       title: "Salesforce Associate",
-      image: "/certifications/associate.png",
+      image: associate,
       issuer: "Salesforce",
       date: "May 21, 2023",
       credential: "3416223"

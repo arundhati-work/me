@@ -2,6 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
+// Import all icon images
+import home from "../../assets/icons/home.png";
+import work from "../../assets/icons/work.png";
+import projects from "../../assets/icons/projects.png";
+import skills from "../../assets/icons/skills.png";
+import certs from "../../assets/icons/certs.png";
+import download from "../../assets/icons/download.png";
+import email from "../../assets/icons/email.png";
+import call from "../../assets/icons/call.png";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home-section');
@@ -81,7 +91,7 @@ const Navbar = () => {
           >
             <div className="nav-item">
               <div className="nav-icon">
-                <img src="/icons/home.png" alt="Home" />
+                <img src={home} alt="Home" />
               </div>
               <p>Home</p>
             </div>
@@ -93,7 +103,7 @@ const Navbar = () => {
           >
             <div className="nav-item">
               <div className="nav-icon">
-                <img src="/icons/work.png" alt="Work Experience" />
+                <img src={work} alt="Work Experience" />
               </div>
               <p>Work Experience</p>
             </div>
@@ -105,7 +115,7 @@ const Navbar = () => {
           >
             <div className="nav-item">
               <div className="nav-icon">
-                <img src="/icons/projects.png" alt="Recent Works" />
+                <img src={projects} alt="Recent Works" />
               </div>
               <p>Recent Works</p>
             </div>
@@ -117,7 +127,7 @@ const Navbar = () => {
           >
             <div className="nav-item">
               <div className="nav-icon">
-                <img src="/icons/skills.png" alt="Skills" />
+                <img src={skills} alt="Skills" />
               </div>
               <p>Skills</p>
             </div>
@@ -129,7 +139,7 @@ const Navbar = () => {
           >
             <div className="nav-item">
               <div className="nav-icon">
-                <img src="/icons/certs.png" alt="Certifications" />
+                <img src={certs} alt="Certifications" />
               </div>
               <p>Certifications</p>
             </div>
@@ -138,7 +148,7 @@ const Navbar = () => {
           <a href="resume.pdf" download>
             <div className="nav-item">
               <div className="nav-icon">
-                <img src="/icons/download.png" alt="Download Resume" />
+                <img src={download} alt="Download Resume" />
               </div>
               <p>Download Resume</p>
             </div>
@@ -148,7 +158,7 @@ const Navbar = () => {
           <a href="mailto:bandopadhyaya.a@northeastern.edu">
             <div className="nav-item">
               <div className="nav-icon">
-                <img src="/icons/email.png" alt="Email" />
+                <img src={email} alt="Email" />
               </div>
               <p>Email</p>
             </div>
@@ -156,7 +166,7 @@ const Navbar = () => {
           <a href="tel:+18575655368">
             <div className="nav-item">
               <div className="nav-icon">
-                <img src="/icons/call.png" alt="Phone" />
+                <img src={call} alt="Phone" />
               </div>
               <p>Phone</p>
             </div>
