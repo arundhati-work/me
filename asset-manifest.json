@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/me/static/css/main.dce829bb.css",
-    "main.js": "/me/static/js/main.2b0fb85d.js",
+    "main.js": "/me/static/js/main.597560af.js",
     "static/js/488.0fd7e826.chunk.js": "/me/static/js/488.0fd7e826.chunk.js",
     "static/media/pets-list.png": "/me/static/media/pets-list.8a014a099a12d19bd5ad.png",
     "static/media/huntgig-about.png": "/me/static/media/huntgig-about.5793a997a60014281bb8.png",
@@ -34,13 +34,14 @@
     "static/media/custom.png": "/me/static/media/custom.80140671ba9e1508ede6.png",
     "static/media/huntgig-signup.png": "/me/static/media/huntgig-signup.9802c19273d0b5dfa2ac.png",
     "static/media/huntgig-admin-create-job.png": "/me/static/media/huntgig-admin-create-job.a1e4f92fe81f98f21312.png",
+    "static/media/arundhati_bandopadhyaya_resume.pdf": "/me/static/media/arundhati_bandopadhyaya_resume.f40f32c4200aa4ed3777.pdf",
     "index.html": "/me/index.html",
     "main.dce829bb.css.map": "/me/static/css/main.dce829bb.css.map",
-    "main.2b0fb85d.js.map": "/me/static/js/main.2b0fb85d.js.map",
+    "main.597560af.js.map": "/me/static/js/main.597560af.js.map",
     "488.0fd7e826.chunk.js.map": "/me/static/js/488.0fd7e826.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dce829bb.css",
-    "static/js/main.2b0fb85d.js"
+    "static/js/main.597560af.js"
   ]
 }
