@@ -16,10 +16,8 @@ const Home = () => {
           <div className="home-text">
             <h4>Hi I'm</h4>
             <h1>Arundhati Bandopadhyaya.</h1>
-            <h2>Full Stack Developer with Expertise in Salesforce, Frontend &#38; Backend Technologies</h2>
-            <p>A passionate Full Stack Developer with hands-on experience in developing Lightning Web Components (LWC), 
-              leading business analysis for Fortune 500 clients, and delivering high-quality web applications. 
-              I am driven by solving complex technical challenges and creating scalable, efficient solutions.</p>
+            <h2>Full Stack Developer Specializing in MERN Stack Development</h2>
+            <p>A passionate Full Stack Developer with expertise in building modern web applications using the MERN stack. I combine React and Redux for dynamic front-end interfaces with Node.js, Express, and MongoDB for scalable backend solutions. With experience in both startup and enterprise environments, I focus on creating performant applications with clean, maintainable code and robust API architectures. I'm driven by solving complex technical challenges and delivering seamless user experiences through modern web development practices.</p>
           </div>
           <div className="button-container">
             <button id="blogButton" onClick={handleResumeDownload}>DOWNLOAD RESUME &gt;&gt;&gt;</button>
